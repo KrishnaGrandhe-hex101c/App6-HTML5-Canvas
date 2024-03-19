@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Krishna Grandhe
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -17,13 +17,14 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The purpose of this coded app is to be able to display things of multiple varieties in a canvas element.
  
 Known Issues:
-blah, blah, blah, blah
+No known issues.
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
--->
+http://diveintohtml5.info/canvas.html
+https://www.w3schools.com/html/html5_canvas.asp
 	
    <head> 
       <title>App6---HTML5-Canvas</title>  
@@ -69,13 +70,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-	<div> 
-	<canvas width="300" height="225" style="border:2px solid #000000;" id="b"></canvas>
+	<div>
+	<!--introduces canvas to utilize. style border adds a black border on the canvas-->
+	<canvas width="300" height="225" style="border:2px solid #000000;" id="b"></canvas> 
 	</div>
 	<div>
+	<!--button that leads to the rectangle function, which displays a rectangle-->
 	<a  onclick = "draw_rectangle()" class="w3-btn w3-grey w3-round"> Draw Rectangle </a>
+	<!--button that leads to the name function, which displays "Krishna Grandhe"-->
 	<a onclick = "write_name()" class="w3-btn w3-grey w3-round"> Display Name </a>
+	<!--button that leads to the image function, which displays an image of an eyeball-->
 	<a onclick = "display_image()" class="w3-btn w3-grey w3-round"> Show Image </a>
+	<!--button that leads to the erase function, which clears the canvas-->
 	<a onclick = "erase()" class="w3-btn w3-grey w3-round"> Reset Canvas </a>	
 	</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
@@ -88,26 +94,30 @@ var docMod = document.lastModified; // loads last modified time stamp into docMo
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 
-var b_canvas = document.getElementById("b");
-var b_context = b_canvas.getContext("2d");
-	
+var b_canvas = document.getElementById("b"); //finds canvas in html
+var b_context = b_canvas.getContext("2d"); //gets context of canvas, which can be manipulated to display
+
+//draws a rectange of size 150x100
 function draw_rectangle() {
   b_context.fillRect(50, 25, 150, 100);
 }
-
+	
+//writes name in the canvas
 function write_name(){
-	b_context.font = "12px Arial";
-	b_context.textAlign = "left";
-	b_context.fillText("Krishna Grandhe", 10, 50);
+	b_context.font = "30px Arial"; //sets font and font size
+	b_context.textAlign = "left"; //starts the text on the left side
+	b_context.fillText("Krishna Grandhe", 10, 50); //actual text-to-be-displayed
 }
 
-var image6 = new Image();
-image6.src = "imageapp6.jpg";
+var image6 = new Image(); //defines new image variable
+image6.src = "imageapp6.jpg"; //assigns the location of the image variable to the one in the folder
 
+//displays image full size
 function display_image(){
 	b_context.drawImage(image6, 0, 0,300,225);
 }
-	
+
+//completely clears the canvas contents
 function erase(){
 b_canvas.width = b_canvas.width;
 }
