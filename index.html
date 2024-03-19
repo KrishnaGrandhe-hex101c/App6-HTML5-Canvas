@@ -69,8 +69,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-	<div onclick = "draw_b()"> 
+	<div> 
 	<canvas width="300" height="225" style="border:2px solid #000000;" id="b"></canvas>
+	<a  onclick = "draw_rectangle()" class="w3-btn w3-grey w3-round"> Draw Rectangle </a>
+	<a onclick = "write_name()" class="w3-btn w3-grey w3-round"> Display Name </a>
+	<a class="w3-btn w3-grey w3-round"> Show Image </a>
+	<a onclick = "erase()" class="w3-btn w3-grey w3-round"> Reset Canvas </a>
 	</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
@@ -85,8 +89,19 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 var b_canvas = document.getElementById("b");
 var b_context = b_canvas.getContext("2d");
 	
-function draw_b() {
+function draw_rectangle() {
   b_context.fillRect(50, 25, 150, 100);
+}
+
+function write_name(){
+	context.font = "bold 12px sans-serif";
+	context.textAlign = "center";
+	context.textBaseline = "middle";
+	context.fillText("Krishna Grandhe", 150, 100);
+}
+
+function erase(){
+b_canvas.width = b_canvas.width;
 }
 	
 </script>
