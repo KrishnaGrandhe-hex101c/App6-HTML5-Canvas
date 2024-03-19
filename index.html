@@ -71,10 +71,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 	<div> 
 	<canvas width="300" height="225" style="border:2px solid #000000;" id="b"></canvas>
+	</div>
+	<div>
 	<a  onclick = "draw_rectangle()" class="w3-btn w3-grey w3-round"> Draw Rectangle </a>
 	<a onclick = "write_name()" class="w3-btn w3-grey w3-round"> Display Name </a>
-	<a class="w3-btn w3-grey w3-round"> Show Image </a>
-	<a onclick = "erase()" class="w3-btn w3-grey w3-round"> Reset Canvas </a>
+	<a onclick = "display_image()" class="w3-btn w3-grey w3-round"> Show Image </a>
+	<a onclick = "erase()" class="w3-btn w3-grey w3-round"> Reset Canvas </a>	
 	</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
@@ -99,6 +101,13 @@ function write_name(){
 	b_context.fillText("Krishna Grandhe", 10, 50);
 }
 
+var image6 = new Image();
+image6.src = "imageapp6.jpg";
+
+function display_image(){
+	b_context.drawImage(image6, 0, 0,300,225);
+}
+	
 function erase(){
 b_canvas.width = b_canvas.width;
 }
